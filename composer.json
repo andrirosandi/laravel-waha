@@ -1,0 +1,24 @@
+{
+    "name": "rosandi-dev/laravel-waha",
+    "description": "This Laravel package integrates with WAHA - WhatsApp HTTP API, allowing you to send and receive WhatsApp messages via HTTP requests. It is not an official WhatsApp API.",
+    "type": "package",
+    "license": "MIT",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Rosandi\\WAHA\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rosandi"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rosandi\\WAHA\\Providers\\WahaServiceProvider"
+            ]
+        }
+    }
+}
