@@ -168,7 +168,7 @@ public function filterToTime($toTime = null)
 
         // Mengambil data session dari WAHA API
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $apiKey,
+            'X-Api-Key' => $apiKey,
         ])->get("{$apiHost}/api/sessions");
 
         if ($response->successful()) {
@@ -205,7 +205,7 @@ public function filterToTime($toTime = null)
 
         // Mengirimkan request ke API
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $apiKey,
+            'X-Api-Key' => $apiKey,
         ])->post("{$apiHost}/api/sendText", $body);  // Mengirimkan body sebagai JSON
 
         if ($response->successful()) {
@@ -289,7 +289,7 @@ public function filterToTime($toTime = null)
         ];
 
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $apiKey,
+            'X-Api-Key' => $apiKey,
         ])->post("{$apiHost}/api/startTyping", $body);
 
         if ($response->successful()) {
@@ -320,7 +320,7 @@ public function filterToTime($toTime = null)
         ];
 
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $apiKey,
+            'X-Api-Key' => $apiKey,
         ])->post("{$apiHost}/api/stopTyping", $body);
 
         if ($response->successful()) {
@@ -347,7 +347,7 @@ public function filterToTime($toTime = null)
         $url = "{$apiHost}/api/{$session}/chats?sortBy={$this->sortBy}&sortOrder={$this->sortOrder}&limit={$this->limit}&offset={$this->offset}";
 
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $apiKey,
+            'X-Api-Key' => $apiKey,
         ])->get($url);
 
         if ($response->successful()) {
@@ -385,7 +385,7 @@ public function filterToTime($toTime = null)
 
         // Mengirimkan request GET ke API
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $apiKey,
+            'X-Api-Key' => $apiKey,
             'accept' => '*/*',
         ])->get($url, $params);
 
@@ -441,7 +441,7 @@ public function filterToTime($toTime = null)
 
         // Mengirimkan request GET ke API untuk mendapatkan peserta
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $apiKey,
+            'X-Api-Key' => $apiKey,
             'accept' => '*/*',
         ])->get($url);
 
